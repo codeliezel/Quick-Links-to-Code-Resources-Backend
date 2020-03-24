@@ -1,4 +1,7 @@
 import users from '../database/models/userModel';
+import {Helper} from '../utils/index';
+
+const {generateToken} = Helper
 
  /**
  * @class UserController
@@ -15,11 +18,19 @@ class UserController {
    */
     static async signUp(req, res) {
     const {username, firstname, lastname, email, password, phonenumber} = req.body;
-    const newUser = new users({username, firstname, lastname, email, password, phonenumber});
-    newUser.save()
-        .then(() => res.json('User added!'))
-        .catch(err => res.status(400).json('Error: ' + err));
-}
+    const hashedPassword = await hashPassword(password);
+    const newUser = new users({
+        username, firstname, lastname, email,
+         password: hashedPassword, phonenumber});
+         const token = generateToken(user._id, user.isAdmin);
+          await newUser.save();
+          return res.status(201).json({
+            status: 201,
+            message: 'Successfully signed up',
+            data: newUser,
+            token,
+          });
+        }
 }
 
 export default UserController
