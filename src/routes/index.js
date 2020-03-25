@@ -1,9 +1,10 @@
-const express = require('express');
+import { Router } from 'express';
 
-const router = express.Router();
-const Users = require('../controllers/users');
+import userRoute from './api/users';
 
-router.post('/api/v1/users/add', Users.createUs);
+const router = new Router();
+
+router.use('/user', userRoute);
 
 
 export default router;
