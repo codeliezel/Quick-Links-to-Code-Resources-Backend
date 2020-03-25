@@ -1,38 +1,35 @@
-import  express from 'express';
-import cors from'cors';
-import mongoose from 'mongoose';
-import router from './routes/index';
+import express from 'express';
+import cors from 'cors';
+import './database/config/index';
+import router from './routes';
 
 require('dotenv').config();
 
+const index = express();
 
-const app = express();
-app.use(cors());
-app.use(express.json());
-app.use(router);
+index.use(cors());
+index.use(express.json());
+index.use('/api/v1/', router);
 
-const uri = process.env.ATLAS_URI;
-mongoose
-  .connect(uri, 
-    { 
-     useUnifiedTopology: true, 
-     useNewUrlParser: true, 
-     useCreateIndex: true,
-    })
-  .then(() => {
-    console.log('Connected to database!');
-  })
-  .catch(error => {
-    console.log('Connection failed!');
-    console.log(error);
+index.get('/', (req, res) => {
+  res.status(200)
+    .json({
+      status: 200,
+      message: 'Hello! I am the back-end of Quick Links to Code Resources project.',
+    });
+});
+
+index.use('*', (req, res) => {
+  res.status(404).json({
+    status: 404,
+    error: 'This route does not exist.',
   });
-
-const port = process.env.PORT || 5000
-const connection = mongoose.connection;
-connection.once('open', () => {
-  console.log('MongoDB database connection established successfully');
 });
 
-app.listen(port, () => {
-    console.log(`server running on port: ${port}`);
+const port = process.env.PORT || 5000;
+
+index.listen(port, () => {
+  console.log(`server running on port: ${port}`);
 });
+
+export default index;

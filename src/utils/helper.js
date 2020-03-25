@@ -35,7 +35,7 @@ export class Helper {
    * @returns {object} response body object
    */
   static generateToken(_id) {
-    const token = jwt.sign({ userId: _id }, process.env.SECRET, { expiresIn: '7d' });
+    const token = jwt.sign({ _id }, process.env.SECRET, { expiresIn: '7d' });
     return token;
   }
 
