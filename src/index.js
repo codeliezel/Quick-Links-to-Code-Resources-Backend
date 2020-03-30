@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import './database/config/index';
+import mongoose from 'mongoose';
 import router from './routes';
 
 require('dotenv').config();
@@ -26,7 +26,27 @@ index.use('*', (req, res) => {
   });
 });
 
-const port = process.env.PORT || 5000;
+const devUri = process.env.DEV_DATABASE_URI;
+mongoose.connect(devUri,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  })
+  .then(() => {
+    console.log('Connected to database!');
+  })
+  .catch((error) => {
+    console.log('Connection failed!');
+    console.log(error);
+  });
+
+const { connection } = mongoose;
+connection.once('open', () => {
+  console.log('MongoDB database connection established successfully');
+});
+
+const port = process.env.PORT || 4000;
 
 index.listen(port, () => {
   console.log(`server running on port: ${port}`);
