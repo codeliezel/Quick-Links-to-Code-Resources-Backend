@@ -7,7 +7,7 @@ services:
   - mongodb
 env:
   global: 
-  - CC_TEST_REPORTER_ID=f9849f1977a1825ac23e6f73359dfe2a3690494ba74b6c4fe69cac5802e7a554
+  - CC_TEST_REPORTER_ID=e2fe1fe9c06f00ed6d3bda865d736bb31e729e5ece410acf67fd9bd44ade77b9
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
@@ -22,5 +22,3 @@ cache:
     - "node_modules" 
 after_success:
   - npm run coverage
- 
-   

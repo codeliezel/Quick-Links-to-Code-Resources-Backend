@@ -6,4 +6,6 @@ const { verifyToken } = authenticate;
 const { userVal } = UserValidation;
 
 
-export { verifyToken, validate, userVal };
+export {
+  verifyToken, validate, userVal,
+};

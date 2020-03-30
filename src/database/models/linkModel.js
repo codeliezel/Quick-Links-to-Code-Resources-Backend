@@ -36,6 +36,9 @@ const linkSchema = new Schema({
     type: String,
     required: true,
   },
+  userId: {
+    type: mongoose.Schema.Types.ObjectId, ref: 'users',
+  },
   createdAt: {
     type: Date, default: moment(Date.now()).format('LLLL'),
   },

@@ -1,4 +1,10 @@
 import UserController from './users';
+import LinkController from './links';
 
 const { signUp, signIn, updateUserDetails } = UserController;
-export { signUp, signIn, updateUserDetails };
+const {
+  addLink, getLink, getAllLinks, updateLink, deleteLink,
+} = LinkController;
+export {
+  signUp, signIn, updateUserDetails, addLink, getLink, getAllLinks, updateLink, deleteLink,
+};
