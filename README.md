@@ -7,7 +7,7 @@
 [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 
 <p> Quick-Links-to-Code-Resources is a <em>fun</em> project which comprises of various links to free code tutorials all around the web.  
-<em>You can check out the hosted API endpoints via this link:</em>
+<em>You can check out the hosted API endpoints via this link: `https://qlcr-backend.herokuapp.com`</em>
 </p>
 
 ## :rocket: Quick start
@@ -28,13 +28,15 @@
 5. Travis CI
 6. Code Climate
 7. Hound CI
-8. Netlify
+8. Heroku
 
 ## :sunny: Sample .env file format
 
 ```
 
 DEV_DATABASE_URI = 
+TEST_DATABASE_URI = 
+PROD_DATABASE_URI = 
 SECRET =  
 name = 
 password = 
