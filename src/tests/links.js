@@ -6,6 +6,7 @@ import { links } from '../database/models/index';
 import index from '../index';
 import { deleteLink, getLink, updateLink, getAllLinks,
 } from '../controllers/index';
+
 const login = {
   email: 'ToluOlakunle@gmail.com',
   password: 'tolukunle.5H',
