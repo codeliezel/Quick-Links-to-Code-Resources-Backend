@@ -1,12 +1,12 @@
-<h2 align = "center"> Q.L.C.R<h2>
-<h1 align = "center"> Quick-Links-to-Code-Resources-Backend</h1>
+<h2 > Q.L.C.R<h2>
+<h1> Quick-Links-to-Code-Resources-Backend</h1>
 
 [![Build Status](https://travis-ci.com/funmi5/Quick-Links-to-Code-Resources-Backend.svg?branch=develop)](https://travis-ci.com/funmi5/Quick-Links-to-Code-Resources-Backend)
 [![Maintainability](https://api.codeclimate.com/v1/badges/900b6ff6a78a85717f3a/maintainability)](https://codeclimate.com/github/funmi5/Quick-Links-to-Code-Resources-Backend/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/900b6ff6a78a85717f3a/test_coverage)](https://codeclimate.com/github/funmi5/Quick-Links-to-Code-Resources-Backend/test_coverage)
 [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 
-<p align = "center"> :rocket: Quick-Links-to-Code-Resources is a <em>fun</em> project aimed at comprising various links to free code tutorials all around the web.  
+<p> Quick-Links-to-Code-Resources is a <em>fun</em> project which comprises of various links to free code tutorials all around the web.  
 <em>You can check out the hosted API endpoints via this link:</em>
 </p>
 

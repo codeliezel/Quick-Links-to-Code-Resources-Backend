@@ -7,7 +7,7 @@ services:
   - mongodb
 env:
   global: 
-  - CC_TEST_REPORTER_ID=e2fe1fe9c06f00ed6d3bda865d736bb31e729e5ece410acf67fd9bd44ade77b9
+  - CC_TEST_REPORTER_ID=9cf9fa3236988dc11d118ccaf1a076c9a5b52cea97e4c75ef1696e9add2fdf06
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
