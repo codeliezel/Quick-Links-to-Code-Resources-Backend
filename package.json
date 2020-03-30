@@ -10,7 +10,8 @@
     "check": "npm run build && node ./build/index.js",
     "start": "npm run check",
     "start:dev": "nodemon --exec babel-node src/index.js",
-    "test": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha src/tests/index --timeout 50000 --require @babel/register --recursive --exit || true"
+    "test": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha src/tests/index --timeout 50000 --require @babel/register --recursive --exit || true",
+    "coverage": "nyc report --reporter=text-lcov --reporter=lcov"
   },
   "repository": {
     "type": "git",
