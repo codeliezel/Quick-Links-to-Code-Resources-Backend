@@ -1,4 +1,4 @@
-import { check, body, param } from 'express-validator';
+import { check } from 'express-validator';
 
 
 const nameRegex = /^[a-zA-Z]*$/;
@@ -81,6 +81,34 @@ const details = [
     .trim(),
 ];
 
+const addLinks = [
+  check('title', 'Please, give it a title.')
+    .not()
+    .isEmpty()
+    .trim(),
+  check('author', 'Supply the name of the author.')
+    .not()
+    .isEmpty()
+    .trim(),
+  check('comment', 'Add a brief comment with a minimum of 30 words and a maximum of 100.')
+    .isLength({ min: 40, max: 100 })
+    .not()
+    .isEmpty()
+    .trim(),
+  check('tags', 'Supply few tags for this resource.')
+    .not()
+    .isEmpty()
+    .trim(),
+  check('category', 'Supply the category this resource belongs to.')
+    .not()
+    .isEmpty()
+    .trim(),
+  check('link', 'Provide a link.')
+    .not()
+    .isEmpty()
+    .trim(),
+];
+
 export {
-  signUp, signIn, details, signUpFields,
+  signUp, signIn, details, signUpFields, addLinks,
 };

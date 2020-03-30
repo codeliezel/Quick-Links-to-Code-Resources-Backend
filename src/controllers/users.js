@@ -38,7 +38,6 @@ class UserController {
         token,
       });
     } catch (error) {
-      console.log(error);
       return res.status(500).json({ status: 500, error: 'An error occurred.' });
     }
   }
@@ -108,23 +107,20 @@ class UserController {
         },
         { new: true },
       );
-      switch (true) {
-        case (req.user._id !== _id):
-          res.status(401).json({
+      if (req.user._id !== _id) {
+        return res.status(401)
+          .json({
             status: 401,
             error: 'Acess denied!',
           });
-          break;
-        default:
-          res.status(200).json({
-            status: 200,
-            message: 'Success!',
-            data: {
-              userName, firstName, lastName, phoneNumber,
-            },
-          });
-          break;
       }
+      return res.status(200).json({
+        status: 200,
+        message: 'Success!',
+        data: {
+          userName, firstName, lastName, phoneNumber,
+        },
+      });
     } catch (error) {
       return res.status(500).json({ status: 500, error: 'An error occurred.' });
     }
