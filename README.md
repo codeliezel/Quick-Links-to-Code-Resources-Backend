@@ -1,4 +1,4 @@
-<h2 > Q.L.C.R<h2>
+## Q.L.C.R
 <h1> Quick-Links-to-Code-Resources-Backend</h1>
 
 [![Build Status](https://travis-ci.com/funmi5/Quick-Links-to-Code-Resources-Backend.svg?branch=develop)](https://travis-ci.com/funmi5/Quick-Links-to-Code-Resources-Backend)
@@ -34,8 +34,7 @@
 
 ```
 
-DEV_DATABASE_URI = 
-TEST_DATABASE_URI = 
+DEV_DATABASE_URI =
 PROD_DATABASE_URI = 
 SECRET =  
 name = 

@@ -27,12 +27,13 @@ index.use('*', (req, res) => {
   });
 });
 
+const port = process.env.PORT || 5000;
+
 const { connection } = mongoose;
 connection.once('open', () => {
   console.log('MongoDB database connection established successfully');
 });
 
-const port = process.env.PORT || 5000;
 
 index.listen(port, () => {
   console.log(`server running on port: ${port}`);
