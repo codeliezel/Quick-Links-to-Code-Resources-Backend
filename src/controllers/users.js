@@ -36,6 +36,7 @@ class UserController {
         status: 201,
         message: 'Success!',
         token,
+        data: { userName, firstName, lastName, email, phoneNumber },
       });
     } catch (error) {
       return res.status(500).json({ status: 500, error: 'An error occurred.' });
